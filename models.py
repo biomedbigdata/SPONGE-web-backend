@@ -23,7 +23,7 @@ class Dataset(db.Model):
     study_abbreviation = db.Column(db.String(32))
     version = db.Column(db.Integer)
 
-class Run(db.Model):
+class SpongeRun(db.Model):
     __tablename__ = "sponge_run"
     sponge_run_ID = db.Column(db.Integer, primary_key=True)
 

@@ -46,8 +46,8 @@ def get_network_results(disease_name="Breast invasive carcinoma",
         subtypes_result = {}
 
     else:
-        run_ids = models.Run.query \
-            .filter(models.Run.dataset_ID.in_(dataset_ids)) \
+        run_ids = models.SpongeRun.query \
+            .filter(models.SpongeRun.dataset_ID.in_(dataset_ids)) \
             .all()
 
         if len(run_ids) == 0:
@@ -123,8 +123,8 @@ def get_network_results(disease_name="Breast invasive carcinoma",
         abort(404, f"Found only 1 Cancer Type entry")
         return
 
-    run_ids = models.Run.query \
-        .filter(models.Run.dataset_ID.in_(dataset_ids)) \
+    run_ids = models.SpongeRun.query \
+        .filter(models.SpongeRun.dataset_ID.in_(dataset_ids)) \
         .all()
 
     if len(run_ids) == 0:
